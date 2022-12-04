@@ -53,7 +53,7 @@ const LoginStep = () => {
   // <button onClick={() => handleGotoLogin()}>Войти</button>
   return (
     <div className="detail-container">
-      <h2>Вы не аторизованы!</h2>
+      <h2>Вы не авторизованы!</h2>
       <div className="auth-message">
         {isLoggedIn ? (
           <>
@@ -67,7 +67,7 @@ const LoginStep = () => {
         ) : (
           <>
             <p>Пожалуйста авторизуйтесь, чтобы продолжить.</p>
-            <button onClick={() => handleContinueShopping()}>Войти</button>
+            <button onClick={() => handleGotoLogin()}>Войти</button>
           </>
         )}
       </div>
@@ -95,16 +95,16 @@ const AddressStep = () => {
   };
   return (
     <div className="detail-container">
-      <h2>Shipping Address</h2>
+      <h2>Адрес доставки</h2>
       <Formik
         initialValues={{
-          fullName: "John Doe",
-          phoneNumber: "5552229876",
-          addressLine: "L1, Palm Residency",
-          city: "Kingston",
-          state: "New York",
-          code: "12401",
-          country: "United States"
+          fullName: "Иван Иванов",
+          phoneNumber: "89292229876",
+          addressLine: "Яна Райниса 8 д. 6",
+          city: "Москва",
+          state: "Московская обл.",
+          code: "345008",
+          country: "Россия"
         }}
         validationSchema={AddressSchema}
         onSubmit={async (values, { resetForm }) => {
@@ -173,10 +173,10 @@ const AddressStep = () => {
                 className="outline"
                 onClick={() => handleBackToLogin()}
               >
-                <i className="rsc-icon-arrow_back" /> Login in as Different User
+                <i className="rsc-icon-arrow_back" /> Войти другим пользователем
               </button>
               <button type="submit">
-                Save Address
+                Продолжить
                 <i className="rsc-icon-arrow_forward" />
               </button>
             </div>
@@ -196,7 +196,7 @@ const PaymentStep = () => {
   const handlePayment = () => {};
   return (
     <div className="detail-container">
-      <h2>Payment</h2>
+      <h2>Оплатить</h2>
       {/* <div>
         <pre>{JSON.stringify(shippingAddress, null, 0)}</pre>
       </div> */}
@@ -206,10 +206,10 @@ const PaymentStep = () => {
           className="outline"
           onClick={() => handleBackToAddress()}
         >
-          <i className="rsc-icon-arrow_back" /> Back to Shipping Details
+          <i className="rsc-icon-arrow_back" /> Назад к доставке
         </button>
         <button disabled={!shippingAddress} onClick={() => handlePayment()}>
-          Save Address
+          Продолжить
           <i className="rsc-icon-arrow_forward" />
         </button>
       </div>

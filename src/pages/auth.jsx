@@ -7,8 +7,8 @@ import { AuthDispatchContext, signIn } from "contexts/auth";
 import Input from "components/core/form-controls/Input";
 
 const LoginSchema = Yup.object().shape({
-  password: Yup.string().required("Password is required!"),
-  username: Yup.string().required("Mobile Number or Email Address is required!")
+  password: Yup.string().required("Поле Пароль не заполнено!"),
+  username: Yup.string().required("Поле Логин не заполнено!")
 });
 
 const AuthPage = () => {
@@ -56,29 +56,29 @@ const AuthPage = () => {
           <Field
             name="username"
             type="text"
-            placeholder="Mobile Number or Email Address"
+            placeholder="Номер телефона или Почтовый адрес"
             component={Input}
           />
           <Field
             name="password"
             type="password"
-            placeholder="Password"
+            placeholder="Пароль"
             component={Input}
           />
 
           <p>
             <a href="/#" onClick={goToForgotPassword}>
-              Forgot Password?
+              Забыли пароль?
             </a>
           </p>
           <button className="auth-button block" onClick={() => {}}>
-            Login
+            Войти
           </button>
 
           <p>
-            New here?{" "}
+            Впервые у нас?{" "}
             <a href="/#" onClick={goToRegister}>
-              Sign Up Now!
+              Регистрация!
             </a>
           </p>
         </Form>
